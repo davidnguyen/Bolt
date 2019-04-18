@@ -1,0 +1,38 @@
+﻿@model Bolt.Samples.MainSite.Features.DefaultLayout.DefaultLayoutRenderingModel
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>@Model.ViewModel.BrowserTitle</title>
+    <meta charset="utf-8">
+    <meta name="description" content="@Model.ViewModel.Description" />
+    <meta name="keywords" content="@Model.ViewModel.Keywords" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="~/Assets/css/bootstrap.min.css">
+    <meta name="theme" content="@Model.ViewModel.SiteRoot.Theme" />
+    <meta name="SiteRootId" content="@Model.ViewModel.SiteRoot.Id.ToString()" />
+    @foreach (var cssRef in Model.ViewModel.SiteRoot.Theme.Styles)
+        {
+            <link rel="stylesheet" href="@cssRef">
+        }
+    @Html.Sitecore().VisitorIdentification()
+</head>
+<body>
+    @Html.Sitecore().Placeholder("main")
+
+    <script src="~/Assets/js/vendor/jquery-3.3.1.slim.min.js"></script>
+    <script src="~/Assets/js/vendor/popper.min.js"></script>
+    <script src="~/Assets/js/bootstrap.min.js"></script>
+    <script src="~/Assets/js/vendor/holder.min.js"></script>
+    <script>
+        Holder.addTheme('thumb', {
+            bg: '#55595c',
+            fg: '#eceeef',
+            text: 'Thumbnail'
+        });
+    </script>
+    @foreach (var jsRef in Model.ViewModel.SiteRoot.Theme.Scripts)
+    {
+        <script src="@jsRef"></script>
+    }
+</body>
+</html>

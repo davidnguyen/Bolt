@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <UsingTask TaskName="TransformXml" AssemblyFile="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v14.0\Web\Microsoft.Web.Publishing.Tasks.dll"/>
+  
+  <Target Name="LocalBuild" Condition="'$(Configuration)' != 'Release'">
+    <PropertyGroup>
+      <DeployLocal Condition=" '$(DeployLocal)' == '' ">False</DeployLocal>
+      <DeployBinaries Condition=" '$(DeployBinaries)' == '' ">False</DeployBinaries>
+      <LocalWebsite>C:\inetpub\wwwroot\sitecore9</LocalWebsite>
+      <ProjectName>$(MSBuildProjectName.Split('.')[1])</ProjectName>
+      <SiteName>$(MSBuildProjectName.Split('.')[2])</SiteName>
+    </PropertyGroup>
+    
+		<MSBuild Projects ="$(MSBuildProjectFullPath)" Targets="DeployContent" Properties="LocalWebsite=$(LocalWebsite);ProjectName=$(ProjectName);SiteName=$(SiteName)"
+             Condition="'$(DeployLocal)' == 'True'" />
+    
+    <MSBuild Projects ="$(MSBuildProjectFullPath)" Targets="DeployBinaries" Properties="LocalWebsite=$(LocalWebsite);ProjectName=$(ProjectName);SiteName=$(SiteName)" 
+             Condition="'$(DeployLocal)' == 'True' AND '$(DeployBinaries)' == 'True'" />
+    
+    <MSBuild Projects ="$(MSBuildProjectFullPath)" Targets="DeployFeatureConfigs" Properties="LocalWebsite=$(LocalWebsite);ProjectName=$(ProjectName);SiteName=$(SiteName)" 
+             Condition="'$(DeployLocal)' == 'True' AND '$(DeployBinaries)' == 'True'" />
+    
+    <MSBuild Projects ="$(MSBuildProjectFullPath)" Targets="ConfigTransform" Properties="LocalWebsite=$(LocalWebsite);ProjectName=$(ProjectName);SiteName=$(SiteName)"
+             Condition="'$(DeployLocal)' == 'True' AND '$(DeployBinaries)' == 'True'" />
+  </Target>
+
+  <Target Name="DeployContent">
+    <ItemGroup>
+      <ContentFiles Include="@(Content)" Exclude="**\*.yml;*.config;**\*.config;**\*.disabled;**\*.example;**\*.cshtml" />
+      <ViewFiles Include="@(Content)" Condition="'%(Extension)' == '.cshtml'" />
+    </ItemGroup>
+    <Message Text="- $(MSBuildProjectName): Deploying content files..." Importance="high" />
+    <Copy SourceFiles="@(ContentFiles)"
+          DestinationFiles="@(ContentFiles->'$(LocalWebsite)\%(RelativeDir)%(Filename)%(Extension)')"
+          SkipUnchangedFiles="false" />
+    <Copy SourceFiles="@(ViewFiles)"
+          DestinationFiles="@(ViewFiles->'$(LocalWebsite)\Views\$(ProjectName)\$(SiteName)\%(RelativeDir)%(Filename)%(Extension)')"
+          SkipUnchangedFiles="false" />
+  </Target>
+
+  <Target Name="DeployBinaries">
+    <ItemGroup>
+      <BinaryFiles Include="bin\*.dll" />
+    </ItemGroup>
+    <Message Text="- $(MSBuildProjectName): Deploying binary files..." Importance="high" />
+    <Copy SourceFiles="@(BinaryFiles)"
+          DestinationFiles="@(BinaryFiles->'$(LocalWebsite)\%(RelativeDir)%(Filename)%(Extension)')"
+          SkipUnchangedFiles="false" />
+  </Target>
+
+  <Target Name="DeployFeatureConfigs">
+    <ItemGroup>
+      <FeatureConfigFiles Include="Features/**/*.config" Exclude="Features/Web.config" />
+    </ItemGroup>
+    <Message Text="- $(MSBuildProjectName): Deploying feature configs..." Importance="high" />
+    <Copy SourceFiles="@(FeatureConfigFiles)" DestinationFolder="$(LocalWebsite)\App_Config\Include\z$(MSBuildProjectName)" />
+    <Copy SourceFiles="Features/Web.config" DestinationFolder="$(LocalWebsite)\Views" />
+  </Target>
+  
+  <Target Name="ConfigTransform">    
+    <Message Text="- $(MSBuildProjectName): Transforminging config files..." Importance="high" />
+    <TransformXml Source="Web.config" Condition="Exists('Web.config')"
+          Transform="Web.Common.config"
+          Destination="$(LocalWebsite)\_Web.config"
+          StackTrace="true" />
+    <TransformXml Source="$(LocalWebsite)\_Web.config" Condition="Exists('$(LocalWebsite)\_Web.config')"
+          Transform="Web.Debug.config"
+          Destination="$(LocalWebsite)\Web.config"
+          StackTrace="true" />
+    <Delete Files="$(LocalWebsite)\_Web.config" />
+  </Target>
+</Project>

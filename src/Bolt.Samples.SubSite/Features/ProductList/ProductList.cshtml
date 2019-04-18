@@ -1,0 +1,36 @@
+﻿@model Bolt.Samples.SubSite.Features.ProductList.ProductListModel
+
+<div class="container">
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h1 class="display-4">@Html.Glass().Editable(x => x.TopHeading)</h1>
+        <p class="lead">@Html.Glass().Editable(x => x.TopDescription)</p>
+    </div>
+
+    <div class="card-deck mb-3 text-center">
+
+        @foreach (var product in Model.Children)
+        {
+        <div class="card mb-4 shadow-sm">
+            @using (Html.Glass().BeginEditFrame("/sitecore/content/Applications/WebEdit/Edit Frame Buttons/Bolt/Samples/SubSite/ProductList/Product", product.Id.ToString(), "Edit Product"))
+            {
+
+            <div class="card-header">
+                <h4 class="my-0 font-weight-normal">@Html.Glass().Editable(product, x => x.Name)</h4>
+            </div>
+            <div class="card-body">
+                <h1 class="card-title pricing-card-title">$@Html.Glass().Editable(product, x => x.Price) <small class="text-muted">/ mo</small></h1>
+                @Html.Glass().Editable(product, x => x.Features)
+                @Html.Glass().RenderLink(product, x => x.Link, new { @class = string.Concat("btn btn-lg btn-block ", product.LinkButtonStyle != null ? product.LinkButtonStyle.Value : string.Empty) },
+                    isEditable: true, contents: product.Link != null ? product.Link.Text : product.Name)
+            </div>
+
+            }
+        </div>
+        }
+
+        @if (Sitecore.Context.PageMode.IsExperienceEditor && Model.Children.Count() == 0)
+        {
+            <div class="card mb-4 shadow-sm">Add to product list</div>
+        }
+    </div>
+</div>

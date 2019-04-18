@@ -1,0 +1,23 @@
+﻿@model Bolt.Samples.MainSite.Features.TileListHorizontal.TileListHorizontalModel
+
+<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+
+    @foreach (var tile in Model.Children)
+    {
+        using (Html.Glass().BeginEditFrame("/sitecore/content/Applications/WebEdit/Edit Frame Buttons/Bolt/Samples/MainSite/TileListHorizontal/Tile", tile.Id.ToString(), "Edit Tile"))
+        {
+            <div class="@tile.BackgroundStyle.Value mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center @tile.TextColor.Value overflow-hidden">
+                <div class="my-3 py-3">
+                    <h2 class="display-5">@Html.Glass().Editable(tile, x => x.Heading)</h2>
+                    <p class="lead">@Html.Glass().Editable(tile, x => x.SubHeading)</p>
+                </div>
+                <div class="@tile.ForegroundStyle.Value shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+            </div>
+        }
+    }
+
+    @if (Sitecore.Context.PageMode.IsExperienceEditor && Model.Children.Count() == 0)
+    {
+        <div>Click here to add tiles</div>
+    }
+</div>

@@ -1,0 +1,42 @@
+﻿@model Bolt.Samples.MainSite.Features.Footer.FooterModel
+
+<footer class="container py-5">
+    <div class="row">
+        <div class="col-12 col-md">
+            @Html.Glass().Editable(x => x.FooterLogo)
+            <small class="d-block mb-3 text-muted">@Html.Glass().Editable(x => x.CopyrightText)</small>
+        </div>
+
+        @foreach (var menuGroup in Model.Children)
+        {
+        <div class="col-6 col-md">
+            @using (Html.Glass().BeginEditFrame("/sitecore/content/Applications/WebEdit/Edit Frame Buttons/Bolt/Samples/MainSite/Footer/Group Menu Item", menuGroup.Id.ToString(), "Footer Menu Group"))
+            {
+                <h5>@Html.Glass().Editable(menuGroup, x => x.Title)</h5>
+                <ul class="list-unstyled text-small">
+                    @foreach (var menuItem in menuGroup.Children)
+                    {
+                        <li>
+                            @using (Html.Glass().BeginEditFrame("/sitecore/content/Applications/WebEdit/Edit Frame Buttons/Bolt/Samples/MainSite/Footer/Menu Item", menuItem.Id.ToString(), "Edit Footer Menu Item"))
+                            {
+                                <text>@Html.Glass().RenderLink(menuItem, x => x.Link, new { @class = "text-muted" },
+                        isEditable: false, contents: menuItem.Link != null ? menuItem.Link.Text : menuItem.Name)</text>
+                            }
+                        </li>
+                    }
+
+                    @if (Sitecore.Context.PageMode.IsExperienceEditor)
+                    {
+                        <li>
+                            @using (Html.Glass().BeginEditFrame("/sitecore/content/Applications/WebEdit/Edit Frame Buttons/Bolt/Samples/MainSite/Footer/New Menu Item", menuGroup.Id.ToString(), "New Footer Menu Item"))
+                            {
+                                <a class="text-muted">[New item]</a>
+                            }
+                        </li>
+                    }
+                </ul>
+            }
+        </div>
+        }
+    </div>
+</footer>

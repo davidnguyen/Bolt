@@ -1,0 +1,34 @@
+{
+  "commands": {
+    "00 Clean": {
+      "fileName": "powershell.exe",
+      "workingDirectory": ".",
+      "arguments": "/c build\\build.ps1 '-t:Clean'"
+    },
+    "01 Build": {
+      "fileName": "powershell.exe",
+      "workingDirectory": ".",
+      "arguments": "/c build\\build.ps1 '-p:Configuration=Debug;DeployLocal=False'"
+    },
+    "02 Deploy Content Only": {
+      "fileName": "powershell.exe",
+      "workingDirectory": ".",
+      "arguments": "/c build\\build.ps1 '-p:Configuration=Debug;DeployLocal=True;DeployBinaries=False'"
+    },
+    "03 Deploy All": {
+      "fileName": "powershell.exe",
+      "workingDirectory": ".",
+      "arguments": "/c build\\build.ps1 '-p:Configuration=Debug;DeployLocal=True;DeployBinaries=True'"
+    },
+    "04 Unicorn Sync": {
+      "fileName": "powershell.exe",
+      "workingDirectory": ".",
+      "arguments": "/c build\\unicorn-sync.ps1 'http://sitecore9/unicorn.aspx' '1B82C9A621139A34F98B853E746B79765616EC794C5CFCD75CD2EC51E3'"
+    },
+    "05 Front-end Sync": {
+      "fileName": "powershell.exe",
+      "workingDirectory": ".",
+      "arguments": "/c build\\fe-sync.ps1"
+    }
+  }
+}
