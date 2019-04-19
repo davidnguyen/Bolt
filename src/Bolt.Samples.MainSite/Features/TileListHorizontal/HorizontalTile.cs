@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Bolt.Samples.MainSite.Features.TileListHorizontal
+namespace Zeus.Samples.MainSite.Features.TileListHorizontal
 {
     public class HorizontalTile
     {

@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Bolt.Samples.SubSite</RootNamespace>
-    <AssemblyName>Bolt.Samples.SubSite</AssemblyName>
+    <RootNamespace>Zeus.Samples.SubSite</RootNamespace>
+    <AssemblyName>Zeus.Samples.SubSite</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -149,9 +149,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Bolt.Common\Bolt.Common.csproj">
+    <ProjectReference Include="..\Bolt.Common\Zeus.Common.csproj">
       <Project>{ef289659-1cf0-4b6a-a645-fdaab8152cc4}</Project>
-      <Name>Bolt.Common</Name>
+      <Name>Zeus.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

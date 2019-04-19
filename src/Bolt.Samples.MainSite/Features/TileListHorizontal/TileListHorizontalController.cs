@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Bolt.Samples.MainSite.Features.TileListHorizontal
+namespace Zeus.Samples.MainSite.Features.TileListHorizontal
 {
     public class TileListHorizontalController : Controller
     {

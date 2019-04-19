@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bolt.Common.Logging
+namespace Zeus.Common.Logging
 {
     public class SitecoreLogService : ILogService
     {

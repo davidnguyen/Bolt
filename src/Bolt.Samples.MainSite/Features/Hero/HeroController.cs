@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Bolt.Samples.MainSite.Features.Hero
+namespace Zeus.Samples.MainSite.Features.Hero
 {
     public class HeroController : Controller
     {

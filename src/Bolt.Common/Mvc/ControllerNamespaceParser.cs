@@ -4,16 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bolt.Common.Mvc
+namespace Zeus.Common.Mvc
 {
     public class ControllerNamespaceParser
     {
         /// <summary>
         /// Parses controller namespace and return parts that are according to the project naming convention
-        /// E.g.    Bolt.Samples.MainSite.Features.Header
+        /// E.g.    Zeus.Samples.MainSite.Features.Header
         ///         should returns a collection of {"Samples", "MainSite", "Features", "Header"}
         ///             
-        /// E.g.    Bolt.Samples.MainSite.Features.Accounts.Login
+        /// E.g.    Zeus.Samples.MainSite.Features.Accounts.Login
         ///         should returns a collection of {"Samples", "MainSite", "Features", "Accounts", "Login"}
         /// </summary>
         /// <param name="controllerNamespace">Controller namespace</param>

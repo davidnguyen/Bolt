@@ -7,8 +7,8 @@
     <ProjectGuid>{EF289659-1CF0-4B6A-A645-FDAAB8152CC4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Bolt.Common</RootNamespace>
-    <AssemblyName>Bolt.Common</AssemblyName>
+    <RootNamespace>Zeus.Common</RootNamespace>
+    <AssemblyName>Zeus.Common</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

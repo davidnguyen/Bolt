@@ -1,6 +1,6 @@
 $param = $args[0]
 $msbuild = "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\MSBuild.exe"
-$solutionName = "Bolt"
+$solutionName = "Zeus"
 
 try {
 	Write-Host "Building $solutionName solution..." -ForegroundColor Green

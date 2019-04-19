@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Unicorn.Pipelines.UnicornExpandConfigurationVariables;
 using Configy.Parsing;
 
-namespace Bolt.Common.Sc.Unicorn
+namespace Zeus.Common.Sc.Unicorn
 {
     /// <summary>
 	/// Enables the use of $(project), $(site) and $(feature) in configurations according to the conguration naming convention of

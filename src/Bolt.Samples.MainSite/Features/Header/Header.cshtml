@@ -1,8 +1,8 @@
-﻿@model Bolt.Samples.MainSite.Features.Header.HeaderModel
+﻿@model Zeus.Samples.MainSite.Features.Header.HeaderModel
 
 <nav class="site-header sticky-top py-1">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
-        @using (Html.Glass().BeginEditFrame("/sitecore/content/Applications/WebEdit/Edit Frame Buttons/Bolt/Samples/MainSite/Header/Logo", Model.Id.ToString(), "Edit Header Logo"))
+        @using (Html.Glass().BeginEditFrame("/sitecore/content/Applications/WebEdit/Edit Frame Buttons/Zeus/Samples/MainSite/Header/Logo", Model.Id.ToString(), "Edit Header Logo"))
         {
             using (Html.Glass().BeginRenderLink(x => x.LogoLink, new { @class = "py-2" }))
             {
@@ -12,7 +12,7 @@
 
         @foreach (var menuItem in Model.Children)
         {
-            using (Html.Glass().BeginEditFrame("/sitecore/content/Applications/WebEdit/Edit Frame Buttons/Bolt/Samples/MainSite/Header/Menu Item", menuItem.Id.ToString(), "Edit Header Menu Item"))
+            using (Html.Glass().BeginEditFrame("/sitecore/content/Applications/WebEdit/Edit Frame Buttons/Zeus/Samples/MainSite/Header/Menu Item", menuItem.Id.ToString(), "Edit Header Menu Item"))
             {
                 <text>@Html.Glass().RenderLink(menuItem, x => x.Link, new { @class = "py-2 d-none d-md-inline-block" },
                     isEditable: false, contents: menuItem.Link != null ? menuItem.Link.Text : menuItem.Name)</text>

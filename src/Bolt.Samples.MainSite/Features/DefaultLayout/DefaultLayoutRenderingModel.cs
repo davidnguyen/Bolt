@@ -1,5 +1,5 @@
-﻿using Bolt.Common.Logging;
-using Bolt.Common.Sc.Mvc;
+﻿using Zeus.Common.Logging;
+using Zeus.Common.Sc.Mvc;
 using Glass.Mapper;
 using Glass.Mapper.Sc;
 using Glass.Mapper.Sc.Web.Mvc;
@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Bolt.Samples.MainSite.Features.DefaultLayout
+namespace Zeus.Samples.MainSite.Features.DefaultLayout
 {
     public class DefaultLayoutRenderingModel : RenderingModel<LayoutModel>
     {

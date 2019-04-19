@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Compilation;
 
-namespace Bolt.Common.Sc.Mvc
+namespace Zeus.Common.Sc.Mvc
 {
     public class ViewModelProcessor : GetModelProcessor
     {

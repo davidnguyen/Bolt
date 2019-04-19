@@ -6,7 +6,7 @@ using Glass.Mapper.Sc.Configuration.Attributes;
 using Glass.Mapper.Sc.Fields;
 using Sitecore.Data;
 
-namespace Bolt.Samples.MainSite.Features.Hero
+namespace Zeus.Samples.MainSite.Features.Hero
 {
     public class HeroModel
     {

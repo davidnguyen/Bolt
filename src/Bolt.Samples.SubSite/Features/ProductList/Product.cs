@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Bolt.Samples.SubSite.Features.ProductList
+namespace Zeus.Samples.SubSite.Features.ProductList
 {
     public class Product
     {

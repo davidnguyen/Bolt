@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bolt.Common.Sc.Mvc
+namespace Zeus.Common.Sc.Mvc
 {
     public abstract class RenderingModel<TViewModel> : RenderingModel
         where TViewModel : class

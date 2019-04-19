@@ -8,7 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace Bolt.Common.Sc.Mvc
+namespace Zeus.Common.Sc.Mvc
 {
     public class RenderingModelLocator : ModelLocator
     {

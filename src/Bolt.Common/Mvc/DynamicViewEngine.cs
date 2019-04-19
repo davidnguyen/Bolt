@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
-namespace Bolt.Common.Mvc
+namespace Zeus.Common.Mvc
 {
     public class DynamicViewEngine : RazorViewEngine
     {

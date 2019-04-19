@@ -6,7 +6,7 @@ using Glass.Mapper.Sc.Configuration.Attributes;
 using Glass.Mapper.Sc.Fields;
 using Sitecore.Data;
 
-namespace Bolt.Samples.MainSite.Features.TileListHorizontal
+namespace Zeus.Samples.MainSite.Features.TileListHorizontal
 {
     public class TileListHorizontalModel
     {

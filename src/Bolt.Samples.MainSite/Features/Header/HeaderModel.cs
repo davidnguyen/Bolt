@@ -6,7 +6,7 @@ using Glass.Mapper.Sc.Configuration.Attributes;
 using Glass.Mapper.Sc.Fields;
 using Sitecore.Data;
 
-namespace Bolt.Samples.MainSite.Features.Header
+namespace Zeus.Samples.MainSite.Features.Header
 {
     public class HeaderModel
     {

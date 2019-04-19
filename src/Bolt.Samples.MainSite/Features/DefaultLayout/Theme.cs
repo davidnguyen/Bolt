@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Bolt.Samples.MainSite.Features.DefaultLayout
+namespace Zeus.Samples.MainSite.Features.DefaultLayout
 {
     public class Theme
     {

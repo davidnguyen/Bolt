@@ -6,7 +6,7 @@ using Glass.Mapper.Sc.Configuration.Attributes;
 using Glass.Mapper.Sc.Fields;
 using Sitecore.Data;
 
-namespace Bolt.Samples.SubSite.Features.ProductList
+namespace Zeus.Samples.SubSite.Features.ProductList
 {
     public class ProductListModel
     {

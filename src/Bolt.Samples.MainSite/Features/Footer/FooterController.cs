@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Bolt.Samples.MainSite.Features.Footer
+namespace Zeus.Samples.MainSite.Features.Footer
 {
     public class FooterController : Controller
     {

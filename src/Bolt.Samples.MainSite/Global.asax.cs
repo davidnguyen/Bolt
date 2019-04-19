@@ -7,9 +7,9 @@ using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
 using System.Web.Http;
-using Bolt.Common.Mvc;
+using Zeus.Common.Mvc;
 
-namespace Bolt.Samples.MainSite
+namespace Zeus.Samples.MainSite
 {
     public class Global : Sitecore.Web.Application
     {

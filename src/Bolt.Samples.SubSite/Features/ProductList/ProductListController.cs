@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Bolt.Samples.SubSite.Features.ProductList
+namespace Zeus.Samples.SubSite.Features.ProductList
 {
     public class ProductListController : Controller
     {

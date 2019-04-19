@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Bolt.Samples.MainSite.Features.Header
+namespace Zeus.Samples.MainSite.Features.Header
 {
     public class HeaderController : Controller
     {
