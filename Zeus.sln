@@ -12,11 +12,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{B503551F
 		build\unicorn.psm1 = build\unicorn.psm1
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zeus.Common", "src\Bolt.Common\Zeus.Common.csproj", "{EF289659-1CF0-4B6A-A645-FDAAB8152CC4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zeus.Common", "src\Zeus.Common\Zeus.Common.csproj", "{EF289659-1CF0-4B6A-A645-FDAAB8152CC4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zeus.Samples.MainSite", "src\Bolt.Samples.MainSite\Zeus.Samples.MainSite.csproj", "{5F7AFCB6-49D4-4AF2-8371-29208ACC920B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zeus.Samples.MainSite", "src\Zeus.Samples.MainSite\Zeus.Samples.MainSite.csproj", "{5F7AFCB6-49D4-4AF2-8371-29208ACC920B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zeus.Samples.SubSite", "src\Bolt.Samples.SubSite\Zeus.Samples.SubSite.csproj", "{CE4F71A2-6A7E-4289-90CB-0DAF6E7E0A3E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zeus.Samples.SubSite", "src\Zeus.Samples.SubSite\Zeus.Samples.SubSite.csproj", "{CE4F71A2-6A7E-4289-90CB-0DAF6E7E0A3E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
